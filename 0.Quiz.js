@@ -1,60 +1,29 @@
-// 2.배열 array
+//Quiz 1
+// a 와 b 값을 바꾸시오
 
-let fruit = "banana";
-let fruit2 = "apple";
-let fruit3 = "grape";
-let fruit4 = "mango";
+let quiz_1_a = 1;
+let quiz_1_b = 2;
+console.log(quiz_1_a, quiz_1_b);
 
-let fruits = ["banana", "apple", "grape", "mango"];
+//quiz_1_a = quiz_1_b;
+//quiz_1_b = quiz_1_a;   =>  윗줄에서 a값에 b 값이 대입되면서 a값이 사라진다
 
-console.log(fruits);
-console.log(fruits[0]);
-console.log(fruits[1]);
-console.log(fruits[2]);
-console.log(fruits[3]);
+let quiz_1_c = quiz_1_a;
+quiz_1_a = quiz_1_b;
+quiz_1_b = quiz_1_c; // c에다 a 값을 넣어놓고 c값을 b값으로 가져온다
 
-//Array에 저장된 값의 호출 번호 [0],[1], ... 를 index라고 부른다 index는 0부터 시작한다.
+console.log(quiz_1_a, quiz_1_b);
 
-//바꾸기
-
-fruits[0] = "cherry";
-console.log(fruits[0]);
-
-fruits[2] = "tomato";
-console.log(fruits[2]);
-
-// (1)배열 기능
-// pop(); 마지막 아이템을 뺌
-// push(); 마지막에 아이템을 더해줌
-// includes(); 해당 아이템을 포함하고 있는지 알려줌
-// indexOf(); 해당 아이템의 index번호를 알려줌
-fruits.pop();
-console.log(fruits);
-
-fruits.push("pineapple");
-console.log(fruits);
-
-console.log(fruits.includes("apple"));
-console.log(fruits.includes("pear"));
-
-console.log(fruits.indexOf("apple"));
-
-// (2)배열 편집
-// slice(); 2 => (2) 번째 index부터 자른다.   (1,3)=> 1전, 3이후로 자른다 = 1부터 3까지 남기고 자른다. (-2) 뒤에서 2개 만남기고
-// splice(); (2,1) 2부터 시작해서 1개의 아이템을 제거한다. => 2포함
-
-console.log(fruits.slice(-2)); // 기존의 배열을자르지 않는다.
-fruits.slice(-2);
-console.log(fruits);
-
-fruits.splice(2, 1); // => slcie는 기존의 배열을 자르지 않기 때문에
-console.log(fruits);
-
-// slice(); 는 기존의 배열을 건드리지 않고, 새로운 배열을 만든다.
-// splice(); 는 기존의 배열을 잘라낸다.
-
-let sliceFruits = fruits.slice(1);
-console.log(sliceFruits);
+//Quiz 2 다음 연산자들의 결과값을 예측
+console.log(1 / 0); // 무한대 => infinity
+console.log(1 + 2 * 3); // 사칙연산 순서 지킨다
+console.log(7.5 % 2); // 소수점 나머지 값 1.5
+console.log(5 == "5"); // 값만 비교 => true
+console.log(5 === "5"); // 형식까지 비교 => false
+console.log(5 != 5.0); // (같지않다)값만 비교 => false  => 같다
+console.log(5 !== 5.0); // (같지않다)형식까지 비교 => false  => 같다
+console.log(!true); // true가 아니다 => false
+console.log(!false); // flase가 아니다 => true
 
 //배열 Quiz
 // 다음 배열에 대하여 아래의 질문에 답하시오
@@ -243,3 +212,71 @@ let newList = animals.slice(animals.indexOf("Baboon"),animals.indexOf("Bison")+1
 console.log(newList)
 
 */
+
+// if문 Quiz
+
+//Quiz 1
+//유저가 입력하는 숫자가 0인지 음성인지 양성인지 판단하는 프로그램을 만드시오
+//html <input class="userInput" type="text"></input>;
+//let userInputNumber = document.qurreyselector(".userInput")
+let userInputNumber = -0.216;
+if (userInputNumber === 0) {
+  console.log("0입니다");
+} else if (userInputNumber > 0) {
+  console.log("양성");
+} else if (userInputNumber < 0) {
+  console.log("음성");
+} else {
+  console.log("숫자를 입력해 주세요");
+}
+
+//Quiz 2
+//나는 대학교 교수다. 레포트 점수에따라 등급을 매기는 프로그램을 만드시오
+
+let student = [
+  { name: "john", score: 89.9, grade: "" },
+  { name: "Ahn", score: 80, grade: "" },
+  { name: "Ahn", score: -30, grade: "" },
+  { name: "Ahn", score: 200, grade: "" },
+  { name: "Ahna", score: "80점", grade: "" },
+];
+
+if (student[0].score > 100) {
+  console.log("100을 넘을 수 없습니다.");
+} else if (student[0].score >= 90 && student[0].score <= 100) {
+  student[0].grade = "A";
+  console.log(student[0].grade);
+} else if (student[0].score >= 80) {
+  student[0].grade = "B";
+  console.log(student[0].grade);
+} else if (student[0].score >= 70) {
+  student[0].grade = "C";
+  console.log(student[0].grade);
+} else if (student[0].score >= 60) {
+  student[0].grade = "D";
+  console.log(student[0].grade);
+} else if (student[0].score >= 0) {
+  student[0].grade = "F";
+  console.log(student[0].grade);
+} else if (student[0].score < 0) {
+  console.log("0보다 작을 수 없습니다");
+} else {
+  console.log("정확한 숫자를 입력하세요");
+}
+
+//Quiz 3
+//한 지원자가 우리회사에 지원을했다. 지원자가 사용가능한 스킬은 배열에 제공이 된다
+//Javascript와 React 둘다 할줄 안다면 “합격!”
+//Javascript와 React 둘중 하나만 할줄 안다면 “예비”,
+//두 스킬이 없다면 “탈락” 을 보여주는 프로그램을 짜시오
+let skills = ["HTML", "CSS", "Javascript", "React"];
+
+console.log(skills.includes("Javascript") && skills.includes("React"));
+
+if (skills.includes("Javascript", "React")) {
+  console.log("합격");
+} else if (skills.includes("Javascript") || skills.includes("React")) {
+  console.log("예비");
+} else {
+  console.log("탈락");
+}

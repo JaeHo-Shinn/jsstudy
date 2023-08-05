@@ -68,33 +68,6 @@ let id = false;
 console.log(passward); //
 console.log(id); //
 
-//Quiz 1
-// a 와 b 값을 바꾸시오
-
-let quiz_1_a = 1;
-let quiz_1_b = 2;
-console.log(quiz_1_a, quiz_1_b);
-
-//quiz_1_a = quiz_1_b;
-//quiz_1_b = quiz_1_a;   =>  윗줄에서 a값에 b 값이 대입되면서 a값이 사라진다
-
-let quiz_1_c = quiz_1_a;
-quiz_1_a = quiz_1_b;
-quiz_1_b = quiz_1_c; // c에다 a 값을 넣어놓고 c값을 b값으로 가져온다
-
-console.log(quiz_1_a, quiz_1_b);
-
-//Quiz 2 다음 연산자들의 결과값을 예측
-console.log(1 / 0); // 무한대 => infinity
-console.log(1 + 2 * 3); // 사칙연산 순서 지킨다
-console.log(7.5 % 2); // 소수점 나머지 값 1.5
-console.log(5 == "5"); // 값만 비교 => true
-console.log(5 === "5"); // 형식까지 비교 => false
-console.log(5 != 5.0); // (같지않다)값만 비교 => false  => 같다
-console.log(5 !== 5.0); // (같지않다)형식까지 비교 => false  => 같다
-console.log(!true); // true가 아니다 => false
-console.log(!false); // flase가 아니다 => true
-
 /* 
 호이스팅 : let과 var의 차이
 
