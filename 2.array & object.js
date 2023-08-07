@@ -47,7 +47,7 @@ console.log(fruits.slice(-2)); // 기존의 배열을자르지 않는다.
 fruits.slice(-2);
 console.log(fruits);
 
-fruits.splice(2, 1); // => slcie는 기존의 배열을 자르지 않기 때문에
+fruits.splice(2, 1); // => slice는 기존의 배열을 자르지 않기 때문에
 console.log(fruits);
 
 // slice(); 는 기존의 배열을 건드리지 않고, 새로운 배열을 만든다.

@@ -101,3 +101,68 @@ let menuu = 8;
 
 let answer = menuu <= 3 ? "범위안의 숫자입니다" : "범위 밖의 숫자입니다";
 console.log(answer);
+
+//
+// 2. for 문 while 문
+// 같은 일을 반복해서 하는 것
+
+// (1) for 문
+//for(let i = 시작점 ; i< 끝점; 증감식){
+//  반목할일
+//  }   i++는 i+1의 줄임말  i++ => i +=1 똑같은 말
+
+for (let i = 0; i < 10; i++) {
+  console.log("반복", i);
+}
+
+//i +=   =>  i는 i+2
+for (let i = 0; i <= 10; i += 2) {
+  console.log("반복짝수", i);
+}
+
+for (let i = 0; i <= 10; i++) {
+  if (i % 2 === 0) {
+    console.log("반복짝수", i);
+  }
+}
+// 같은 짝수 반복문 이지만 아래쪽은 i가 0~10까지 다 돌아가지만
+// 윗쪽은 i가 두칸씩 6번만 돌아간다  => 더 효율적이다
+// 하지만 상황에 다라 아래쪽을 써야 할 때도 있으니 상황에 맞게
+
+//
+// 이중 for 문  => 3중 4중 까지 돌릴 수 있는데 컴퓨터 힘들다.. 과연 3중까지 써야했을까?
+// 구구단 만들기
+
+for (let i = 2; i < 10; i++) {
+  for (let n = 1; n < 10; n++) {
+    if (n === 1) {
+      console.log(i + "단");
+    }
+    console.log(i + "*" + n + "=" + i * n);
+  }
+}
+
+//(2) while 문
+// let i=0  ==> 시작점설정
+// while(종료지점)){
+//     반복명령;
+//     증감식;
+// }
+
+let i = 2;
+while (i < 10) {
+  console.log("while 반복", i);
+  i++;
+}
+
+// 보통 for의 경우 시작점, 종료점 명확한 경우 사용, 배열과 같이 잘 쓰임
+let fruits = ["apple", "banana", "grape", "mango"];
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+
+// while의 경우 아래와 같이 시작점, 종료점 애매하지만
+// 조건 충족되면 작동될 수 있도록  ex) 이런 상태일때 작동해줘
+// while(bittonClick === true){
+//     명령;
+// }

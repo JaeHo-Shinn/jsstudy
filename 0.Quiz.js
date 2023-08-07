@@ -280,3 +280,61 @@ if (skills.includes("Javascript", "React")) {
 } else {
   console.log("탈락");
 }
+
+//
+//반복문 Quiz
+
+//Quiz1 1부터 100까지 더하는 for문
+
+for (let i = 1; i <= 100; i++) {
+  console.log(((i + 1) * i) / 2);
+}
+
+//Quiz2 1부터 100까지 홀수만
+for (let i = 1; i < 100; i += 2) {
+  console.log(i);
+}
+
+//Quiz3 1부터 50까지 369 게임 결과
+
+for (let i = 1; i <= 50; i++) {
+  let stringValue = i.toString();
+  let result = "";
+  for (let j = 0; j < stringValue.length; j++) {
+    if (
+      stringValue[j] == "3" ||
+      stringValue[j] == "6" ||
+      stringValue[j] == "9"
+    ) {
+      result += "짝";
+    }
+  }
+  console.log(result.length > 0 ? result : i);
+}
+
+// Quiz 4 주어진 숫자가 소수이면 true 아니면 false를 출력하는 프로그램을 짜시오.
+
+let inputnum = 10;
+console.log("입력 숫자" + inputnum);
+
+let prime = "소수입니다";
+for (let i = 2; i < inputnum; i++) {
+  console.log(inputnum % i);
+  if (inputnum % 1 === 0) {
+    prime = "소수가 아닙니다";
+  }
+}
+console.log(prime);
+
+//n번째 숫자까지의 소수
+let inputnumm = 10;
+console.log(inputnumm + "까지의 소수");
+for (let i = 2; i <= inputnumm; i++) {
+  let primee = "소수";
+  for (let n = 2; n < i; n++) {
+    if (i % n === 0) {
+      primee = "소수X";
+    }
+  }
+  console.log(i + "=" + primee);
+}
