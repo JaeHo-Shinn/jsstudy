@@ -156,6 +156,11 @@ while (i < 10) {
 }
 
 // 보통 for의 경우 시작점, 종료점 명확한 경우 사용, 배열과 같이 잘 쓰임
+//****자주쓰는 표현 array가 비어있을 경우 if(array.lehgth === 0 ) 어레이 길이가 0 == 어레이는 비어있다
+//**** array의 각 값들을 반복문으로 돌리고 싶은 경우 for (let i=0; i < array.length ; i++) {array[i] 블라블라}
+// array[0]부터 0부터 array길이만큼 돌려라
+//
+
 let fruits = ["apple", "banana", "grape", "mango"];
 for (let i = 0; i < fruits.length; i++) {
   console.log(fruits[i]);

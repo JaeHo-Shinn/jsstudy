@@ -338,3 +338,96 @@ for (let i = 2; i <= inputnumm; i++) {
   }
   console.log(i + "=" + primee);
 }
+
+//
+//
+// function Quiz
+
+// Quiz 1 년,월,일 인자 세개를 받습니다.
+// 년도만 받은 경우 xx년
+// 년, 월을 받은경우 xx년xx월
+// 세개를 받은경우 년/월/일
+
+function meetA(a, b, c) {
+  if (c) {
+    return `${a}/${b}/${c}`;
+  }
+  if (b) {
+    return `${a}년 ${b}월`;
+  } else {
+    return `${a}년`;
+  }
+} // a,b 값이 존재해야 c 값이 존재할 수 있으니 생략가능하다
+//  매개변수값이 존재하면 true, 존재하지 않으면 undifinded 반환 => undifinded는 false값이다
+
+meetA(2022);
+console.log(meetA(2022));
+meetA(2022, 2);
+console.log(meetA(2022, 2));
+meetA(2022, 2, 3);
+console.log(meetA(2022, 2, 3));
+
+//
+// Quiz 2 숫자로 이루어진 arr의 가장 작은 값
+// arr가 비워져있으면 0
+//
+let arrr = [100, 200, 30, 9, 3546];
+console.log(arrr + " 의 최소값은?");
+function findSmall(a) {
+  if (a.length === 0) {
+    return 0;
+  } else {
+    return Math.min.apply(null, a);
+  }
+}
+findSmall(arrr);
+console.log(findSmall(arrr));
+
+// 답안
+
+function findSmallest(a) {
+  let result = a[0]; // 받은 array의 0번째 value 부터 시작
+  if (a.length === 0) {
+    return 0;
+  }
+  for (let i = 0; i < a.length; i++) {
+    if (result >= a[i]) {
+      result = a[i];
+    }
+  }
+  return result;
+}
+
+findSmallest(arrr);
+console.log(findSmallest(arrr));
+
+//
+//금액을 받아 몇개의 지폐와 동전이 필요한지 최소 개수 계산
+//
+
+let moneyy = 12300;
+function countt(a) {
+  let q = a + " = ";
+  let w = "50000 X " + Math.floor(a / 50000);
+  let e = ", 10000 X " + Math.floor((a % 50000) / 10000);
+  let u = ", 5000 X " + Math.floor((a % 10000) / 5000);
+  let r = ", 1000 X " + Math.floor((a % 10000) / 1000);
+  let t = ", 500 X " + Math.floor((a % 1000) / 500);
+  let y = ", 100 X " + Math.floor((a % 500) / 100);
+  return q + w + e + u + r + t + y;
+}
+countt(moneyy);
+console.log(countt(moneyy));
+
+//
+//답안
+//
+function changeCalculate(money) {
+  let unit = [50000, 10000, 5000, 1000, 500, 100];
+  for (let i = 0; i < unit.length; i++) {
+    let num = Math.floor(money / unit[i]);
+    console.log(`${unit[i]} x ${num}`);
+    money = money - num * unit[i];
+  }
+}
+changeCalculate(12300);
