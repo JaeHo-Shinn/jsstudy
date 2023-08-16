@@ -431,3 +431,238 @@ function changeCalculate(money) {
   }
 }
 changeCalculate(12300);
+
+//
+//
+// 5. ES6 연습
+//
+//
+// 1. 다음의 코드를 es6 문법을 이용하여 재작성 하시오
+
+let nameES = "noona's fruit store";
+let fruitsES = ["banana", "apple", "mango"];
+let addressES = "Seoul";
+
+// let store = {    name:name,    fruits:fruits,    address:address
+// }
+let storeES = { nameES, fruitsES, addressES };
+console.log(storeES);
+
+// 2. es6 문법을 이용하여 다음과 같이 출력하시오
+// 제 가게 이름은 noona's fruit store 입니다. 위치는 Seoul 에 있습니다
+console.log(
+  `제 가게 이름은 ${storeES.nameES} 입니다. 위치는 ${storeES.addressES} 에 있습니다`
+);
+
+// 3. 다음 코드를 Destructoring을 이용하여 해결하시오
+
+// function calculate(obj){    // 함수 안을 바꾸시오
+//     return a+b+c
+// }
+
+// calculate({a:1,b:2,c:3})
+
+function calculate(obj) {
+  // 함수 안을 바꾸시오
+  let { a, b, c } = obj;
+  return a + b + c;
+}
+
+console.log(calculate({ a: 1, b: 2, c: 3 }));
+
+// 4. 다음 문제에 정답이 true가 나오게 하시오
+
+let nameESS = "noona store";
+let fruitsESS = ["banana", "apple", "mango"];
+let addressESS = {
+  country: "Korea",
+  city: "Seoul",
+};
+
+function findStoreESS(obj) {
+  console.log(obj);
+  // addressESS
+  // :
+  // {country: 'Korea', city: 'Seoul'}
+  // fruitsESS
+  // :
+  // (3) ['banana', 'apple', 'mango']
+  // nameESS
+  // :
+  // "noona store"
+
+  // let nameESS = obj.nameESS;
+  // let city = obj.addressESS.city;
+
+  let {
+    nameESS,
+    addressESS: { city },
+  } = obj;
+  return nameESS == "noona store" && city == "Seoul";
+}
+console.log(findStoreESS({ nameESS, fruitsESS, addressESS }));
+
+// 5. 다음과같이 프린트되게 코드를 바꾸시오
+function getNumberES() {
+  let array = [1, 2, 3, 4, 5, 6];
+  let [first, second, third, forth, ...rest] = array; // 여기서부터 바꾸시오
+  return { first, third, forth };
+}
+console.log(getNumberES()); //  결과값 { first: 1, third: 3, forth: 4 }
+
+// 6. 다음의 결과가 true가 되게 하시오
+function getCalendar(first, ...rest) {
+  return (
+    first === "January" &&
+    rest[0] === "Febuary" &&
+    rest[1] === "March" &&
+    rest[2] === undefined
+  );
+}
+console.log(getCalendar("January", "Febuary", "March")); // 여기를 바꾸시오
+
+// 7. 두 어레이들중 최소값을 찾는 함수를 완성하시오
+function getMinimum() {
+  let a = [45, 23, 78];
+  let b = [54, 11, 9];
+  return Math.min(...a, ...b); // 여기를 바꾸시오
+}
+console.log(getMinimum());
+
+// 8. 다음의 함수를 화살표 함수로 바꾸시오
+
+function sumNumberES() {
+  // 여기서부터 바꾸시오
+  const sum = (a, b) => {
+    return a + b;
+  };
+  return sum(40, 10);
+}
+
+// 9. 다음함수를 화살표 함수로 바꾸시오
+function sumNumberESS() {
+  // 여기를 바꾸시오
+  // return addNumber(1)(2)(3);
+  // function addNumber(a) {
+  //   return function (b) {
+  //     return function (c) {
+  //       return a + b + c;
+  //     };
+  //   };
+  // }
+  let addNumber = (a) => (b) => (c) => a + b + c;
+  return addNumber(1)(2)(3);
+}
+console.log(sumNumberESS());
+
+//
+//
+// 5. ES6 연습 2
+//
+let namesESQuiz = [
+  "Steven Paul Jobs",
+  "Bill Gates",
+  "Mark Elliot Zuckerberg",
+  "Elon Musk",
+  "Jeff Bezos",
+  "Warren Edward Buffett",
+  "Larry Page",
+  "Larry Ellison",
+  "Tim Cook",
+  "Lloyd Blankfein",
+];
+
+// map 문제
+
+// 모든 이름을 대문자로 바꾸어서 출력하시오.
+
+let namesESQuizUpperCase = namesESQuiz.map((item) => {
+  return item.toUpperCase();
+});
+console.log(namesESQuizUpperCase);
+
+// 성을제외한 이름만 출력하시오. (예-[“Steven”,“Bill”,“Mark”,“Elon”…])
+
+let namesESQuizFirstName = namesESQuiz.map((item) => {
+  nameArr = item.split(" ");
+  return nameArr[0];
+});
+console.log(namesESQuizFirstName);
+
+// 이름의 이니셜만 출력하시오. (예-[“SPU”,“BG”,“MEZ”,“EM”…])
+
+let namesESQuizInitial = namesESQuiz.map((item) => {
+  nameArr = item.split(" ");
+  // let getInitial = "";
+  // for (i = 0; i < nameArr.length; i++) {
+  //   getInitial += nameArr[i].charAt(0);
+  // }
+  let getInitial = "";
+  nameArr.forEach((element) => (getInitial += element.charAt(0)));
+  return getInitial;
+});
+console.log(namesESQuizInitial);
+
+// filter 문제
+
+// 이름에 a를 포함한 사람들을 출력하시오.
+let namesESQuizIncludeA = namesESQuiz.filter((item) => {
+  return item.includes("a");
+});
+console.log(namesESQuizIncludeA);
+
+// 이름에 같은 글자가 연속해서 들어간 사람을 출력하시오. (예-tt,ff,ll 이런 글자들)
+let doubleLetter = namesESQuiz.filter((item) => {
+  let splitName = item.split("");
+  return splitName.some((letter, index) => letter == splitName[index + 1]);
+});
+
+console.log(doubleLetter);
+
+// some 문제
+// 전체 이름의 길이가 20자 이상인 사람이 있는가?
+console.log(namesESQuiz.some((item) => item.length >= 20));
+
+// 성을 제외한 이름에 p를 포함한 사람이 있는가?(대소문자 상관 no)
+console.log(
+  namesESQuiz.some((item) => {
+    let nameSplit = item.split(" ");
+    nameSplit.pop();
+    return nameSplit.some((eachItem) =>
+      eachItem.toLocaleLowerCase().includes("p")
+    );
+  })
+);
+
+// every 문제
+// 모두의 전체 이름의 길이가 20자 이상인가?
+console.log(
+  namesESQuiz.every((item) => {
+    item.length >= 20;
+  })
+);
+// 모두의 이름에 a 가 포함되어 있는가?
+console.log(namesESQuiz.every((item) => item.includes("a")));
+
+// find 문제
+// 전체 이름의 길이가 20자 이상인 사람을 찾으시오.
+console.log(namesESQuiz.find((item) => item.length >= 20));
+// 미들네임이 포함되어있는 사람을 찾으시오.(예-Steven Paul Jobs)
+console.log(
+  namesESQuiz.find((item) => {
+    let eachName = item.split(" ");
+    return eachName.length >= 3;
+  })
+);
+
+// findIndex 문제
+// 전체 이름의 길이가 20자 이상인 사람의 인덱스 번호를 찾으시오.
+console.log(namesESQuiz.findIndex((item) => item.length >= 20));
+
+// 미들네임이 포함되어있는 사람의 인덱스 번호를 찾으시오
+console.log(
+  namesESQuiz.findIndex((item) => {
+    let adf = item.split(" ");
+    return adf.length >= 3;
+  })
+);
